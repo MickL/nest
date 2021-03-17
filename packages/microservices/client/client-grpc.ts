@@ -19,8 +19,8 @@ let grpcPackage: any = {};
 let grpcProtoLoaderPackage: any = {};
 
 export class ClientGrpcProxy extends ClientProxy implements ClientGrpc {
+  public readonly clients = new Map<string, any>();
   protected readonly logger = new Logger(ClientProxy.name);
-  protected readonly clients = new Map<string, any>();
   protected readonly url: string;
   protected grpcClients = [];
 
