@@ -12,7 +12,7 @@ let natsPackage: any = {};
 export class ClientNats extends ClientProxy {
   protected readonly logger = new Logger(ClientProxy.name);
   protected readonly url: string;
-  protected natsClient: Client;
+  public readonly natsClient: Client;
   protected connection: Promise<any>;
 
   constructor(protected readonly options: NatsOptions['options']) {
